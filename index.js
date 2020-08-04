@@ -255,9 +255,9 @@ pm2.launchBus(function(err, bus) {
         if (conf[data.event]) {
             if (data.process.name !== 'pm2-telegram-notify') {
                 messages.push({
-                    name: data.process.name,
+                    name: conf.serverName,
                     event: data.event,
-                    description: 'The following event has occured on the PM2 process ' + data.process.name + ': ' + data.event,
+                    description: 'Произошел ивент на сервере' + data.process.name + ': ' + data.event,
                     timestamp: Math.floor(Date.now() / 100000),
                 });
             }

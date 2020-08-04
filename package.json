@@ -34,6 +34,7 @@
     "moment": "^2.18.1"
   },
   "config": {
+    "serverName": "PM2 NAME",
     "log_err": true,
     "chat_id": null,
     "telegram_url": null,

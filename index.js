@@ -257,7 +257,7 @@ pm2.launchBus(function(err, bus) {
                 messages.push({
                     name: conf.serverName,
                     event: data.event,
-                    description: 'Произошел ивент на сервере' + data.process.name + ': ' + data.event,
+                    description: 'Произошел ивент на сервере ' + data.process.name + ': ' + data.event,
                     timestamp: Math.floor(Date.now() / 100000),
                 });
             }

@@ -174,7 +174,7 @@ pm2.launchBus(function(err, bus) {
         bus.on('log:err', function(data) {
             if (data.process.name !== 'pm2-telegram-notify') {
                 messages.push({
-                    name: data.process.name,
+                    name: conf.serverName,
                     event: 'error',
                     description: data.data ,
                     timestamp: Math.floor(Date.now() / 9999),
@@ -186,7 +186,7 @@ pm2.launchBus(function(err, bus) {
         bus.on('log:out', function(data) {
             if (data.process.name !== 'pm2-telegram-notify') {
                 messages.push({
-                    name: data.process.name,
+                    name: conf.serverName,
                     event: 'log',
                     description: data.data,
                     timestamp: Math.floor(Date.now() / 10000),
@@ -201,7 +201,7 @@ pm2.launchBus(function(err, bus) {
         bus.on('log:out', function(data) {
             if (data.process.name !== 'pm2-telegram-notify') {
                 messages.push({
-                    name: data.process.name,
+                    name: conf.serverName,
                     event: 'log',
                     description: data.data,
                     timestamp: Math.floor(Date.now() / 10000),
@@ -215,7 +215,7 @@ pm2.launchBus(function(err, bus) {
         bus.on('log:err', function(data) {
             if (data.process.name !== 'pm2-telegram-notify') {
                 messages.push({
-                    name: data.process.name,
+                    name: conf.serverName,
                     event: 'error',
                     description: data.data,
                     timestamp: Math.floor(Date.now() / 9999),
@@ -241,7 +241,7 @@ pm2.launchBus(function(err, bus) {
         bus.on('process:exception', function(data) {
             if (data.process.name !== 'pm2-telegram-notify') {
                 messages.push({
-                    name: data.process.name,
+                    name: conf.serverName,
                     event: 'exception',
                     description: JSON.stringify(data.data),
                     timestamp: Math.floor(Date.now() / 100000),
